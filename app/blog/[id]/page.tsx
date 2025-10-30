@@ -1,6 +1,7 @@
 import Navigation from "@/components/navigation"
 import Footer from "@/components/footer"
 import { blogPosts } from "@/data/blog-posts"
+import { BlogContentRenderer } from "@/components/blog-content-renderer"
 import Link from "next/link"
 import { notFound } from "next/navigation"
 
@@ -47,7 +48,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
           </header>
 
           <div className="prose prose-invert max-w-none">
-            <div className="text-foreground leading-relaxed space-y-4 whitespace-pre-wrap">{post.content}</div>
+            <BlogContentRenderer content={post.content} />
           </div>
         </article>
       </main>
